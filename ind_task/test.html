@@ -1,0 +1,87 @@
+<html> 
+    <head>   
+        <meta charset="utf-8">   
+        <title>Лабораторная работа 4</title>  
+        <script src="http://d3js.org/d3.v7.min.js"> </script> 
+        <style>     
+        svg { 
+            border:1px solid grey;     
+            }   
+        form{
+            display:grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            width:80%;
+        }
+        .dataForm {
+            display:grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        .hidden {
+            display:none;
+        }
+        .animatSettings{
+            display:grid;
+            grid-template-columns: 1fr 6fr 1fr;
+            margin:5px;
+        }
+        .dataForm select{
+            margin:20px 0px;
+        }
+        /* svg path, line { 
+            stroke: blue;     
+            width: 1px;   
+        }      */
+        
+
+        
+        </style> 
+    </head> 
+   
+    <body> 
+        <form id="setting" >     
+            <div>Время анимации<br>
+                <div class="dataForm">
+                    <p>
+                        <input type="number" id="cx" value="6000" min=0><br>       
+
+                         
+                    </p>
+                </div>  
+            </div>
+
+
+             <div>Увеличение<br>   
+                <div class="dataForm">
+                    <p>
+                        <label for="mx">по x: </label>       
+                        <input type="number" id="mx" value="2" max=20 min=0><br>       
+
+                        <label for="my">по y: </label>      
+                        <input type="number" id="my" value="2" max=20 min=0>    
+                    </p>  
+                </div>
+            </div>
+
+
+
+            <div>Скорость кручения<br> 
+                <div class="dataForm">
+                    <p>     
+                        <input type="number" id="ang" value="180" max=360 min=0><br>        
+                    </p>  
+                </div>   
+            </div>
+
+            <div>
+                <input type="button" value="Очистить" onClick="clean()">  
+
+                <input type="button" value="Анимировать" id="animate" onClick="runAnimation(this.form)"> 
+                
+            </div>
+            
+        </form> 
+
+        <svg></svg> 
+    </body>  
+        <script src="test.js"></script> 
+    </html> 
